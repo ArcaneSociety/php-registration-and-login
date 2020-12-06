@@ -1,21 +1,38 @@
 <?php
 include_once 'header.php';
 ?>
-<section class='signup'>
-    <h2>Login</h2>
-    <form action="includes/login.inc.php" method="post">
-        <input type="text" name="uid" placeholder="Username/Email">
-        <input type="password" name="pwd" placeholder="Password">
-        <button type="submit" name="submit">Login</button>
-    </form>
-    <?php
+<link rel="stylesheet" href="./css/login.css">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            <form class="form-signin" action="includes/login.inc.php" method="POST">
+              <div class="form-label-group">
+                <input type="text" class="form-control" id="inputEmail" name="uid" placeholder="Username/Email">
+                <label for="inputEmail">Email address</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" name="pwd" class="form-control" placeholder="Password">
+                <label for="inputPassword">Password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" name="submit" type="submit">Sign in</button>
+            </form>
+            <?php
     if (isset($_GET["error"])) {
         if ($_GET["error"]== "emptyinput") {
-            echo "<p>Fill in all fields!</p>";
+            echo "<p style='text-align: center;'>Fill in all fields!</p>";
         }
         elseif ($_GET["error"]=="wronglogin") {
-            echo "<p>Incorrect credentials</p>";
+            echo "<p style='text-align: center;'>Incorrect credentials</p>";
         }
     }
 ?>
-</section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

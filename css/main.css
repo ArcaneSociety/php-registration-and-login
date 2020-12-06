@@ -1,0 +1,13 @@
+.bg-cover {
+  background-size: cover !important;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  height: 100vh;
+  border-radius: 0;
+}
+
+h1 {
+  color: black;
+}

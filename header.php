@@ -7,25 +7,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/landing.css">
     <title>My Site</title>
 </head>
 <body>
-    <header>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Blog</li>
-            <?php
+<ul>
+  <li><a href="/mywebsite">Home</a></li>
+  <?php
                 if (isset($_SESSION["useruid"])) {
                     echo "<li><a href='profile.php'>Your profile</a></li>";
-                    echo "<li><a href='includes/logout.inc.php'>Log out</a></li>";
+                    echo "<li style='float:right'><a href='includes/logout.inc.php'>Log out</a></li>";
                 }
                 else{
-                    echo "<li> <a href='signup.php'>Sign up</a></li>";
-                    echo "<li> <a href='login.php'>Login</a></li>";
+                    echo "<li style='float:right'> <a href='signup.php'>Sign up</a></li>";
+                    echo "<li  style='float:right'> <a href='login.php'>Login</a></li>";
                 }
-            ?>
-        </ul>
-    </header>
+    ?>
+</ul>
+
+
+
+
+
 </body>
 </html>
